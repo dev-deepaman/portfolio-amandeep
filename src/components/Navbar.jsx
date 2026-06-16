@@ -1,25 +1,20 @@
+import logo from "../assets/logo.jpg";
+import { menuItems } from "../data/menu";
+
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>Amandeep Singh</h2>
+      <img src={logo} alt="logo" className="logo" />
 
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+      <ul className="nav-links">
+        {menuItems.map((item) => (
+          <li key={item.name}>
+            <a href={item.link}>{item.name}</a>
+          </li>
+        ))}
       </ul>
+
+      <button className="hire-btn">Hire Me</button>
     </nav>
   );
 }

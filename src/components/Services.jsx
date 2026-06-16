@@ -1,20 +1,36 @@
-function Skills() {
-  return (
-    <section id="skills" className="skills">
-      <h2>My Skills</h2>
+import { services } from "../data/services";
 
-      <div className="skills-container">
-        <div className="skill-card">HTML5</div>
-        <div className="skill-card">CSS3</div>
-        <div className="skill-card">JavaScript</div>
-        <div className="skill-card">React</div>
-        <div className="skill-card">Git</div>
-        <div className="skill-card">GitHub</div>
-        <div className="skill-card">Responsive Design</div>
-        <div className="skill-card">Bootstrap</div>
+function Services() {
+  return (
+    <section id="services" className="services">
+      <div className="services-header">
+        <h2>My Quality Services</h2>
+
+        <p>
+          We put your ideas and wishes into the form of a unique web project
+          that inspires both you and your customers.
+        </p>
+      </div>
+
+      <div className="services-list">
+        {services.map((service) => (
+          <div className="service-item" key={service.id}>
+            <div className="service-left">
+              <span>{service.id}</span>
+
+              <h3>{service.title}</h3>
+            </div>
+
+            <div className="service-center">
+              <p>{service.description}</p>
+            </div>
+
+            <div className="service-right">→</div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-export default Skills;
+export default Services;
