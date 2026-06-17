@@ -1,7 +1,9 @@
+import { projects } from "../data/projects";
+
 function Recentwork() {
   return (
-    <section id="recent-work" className="recent-work">
-      <div className="recent-work-header">
+    <section id="portfolio" className="portfolio">
+      <div className="portfolio-header">
         <h2>My Recent Works</h2>
 
         <p>
@@ -10,8 +12,20 @@ function Recentwork() {
         </p>
       </div>
 
-      <div className="recent-work-list">
-        <p>coming soon...</p>
+      <div className="portfolio-grid">
+        {projects.map((project) => (
+          <div className="project-card" key={project.id}>
+            <img src={project.image} alt={project.title} />
+
+            <div className="project-overlay">
+              <div>
+                <h3>{project.title}</h3>
+
+                <p>{project.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

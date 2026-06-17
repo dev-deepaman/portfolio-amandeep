@@ -1,4 +1,5 @@
 import profileImg from "../assets/Aman.jpg";
+import { FaDownload } from "react-icons/fa";
 
 function Hero() {
   return (
@@ -17,7 +18,14 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Download CV</button>
+            <a
+              href="/Resume-Amandeep_singh.pdf"
+              download
+              className="download-btn"
+            >
+              Download CV
+              <FaDownload />
+            </a>
           </div>
         </div>
 

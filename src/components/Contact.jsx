@@ -1,36 +1,63 @@
+import { contactInfo } from "../data/contact";
+
 function Contact() {
   return (
-    <section id="contact" className="contact">
-      <h2>Get In Touch</h2>
+    <section className="contact-section">
+      <div className="contact-form-wrapper">
+        <h2>Let's work together!</h2>
 
-      <p>
-        I'm currently open to freelance opportunities, internships, and
-        collaboration on exciting projects. Feel free to reach out.
-      </p>
+        <p>
+          I design and develop modern web applications with clean code and great
+          user experience.
+        </p>
+
+        <form className="contact-form">
+          <div className="form-row">
+            <input type="text" placeholder="First Name" />
+
+            <input type="text" placeholder="Last Name" />
+          </div>
+
+          <div className="form-row">
+            <input type="email" placeholder="Email Address" />
+
+            <input type="text" placeholder="Phone Number" />
+          </div>
+
+          <select>
+            <option>Select an Option</option>
+
+            <option>Website Development</option>
+
+            <option>React Project</option>
+
+            <option>Portfolio Website</option>
+          </select>
+
+          <textarea rows="7" placeholder="Message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
 
       <div className="contact-info">
-        <div className="contact-card">
-          <h3>Email</h3>
-          <a href="mailto:yourmail@gmail.com">amandeep1892@gmail.com</a>
-        </div>
+        {contactInfo.map((item, index) => {
+          const Icon = item.icon;
 
-        <div className="contact-card">
-          <h3>GitHub</h3>
-          <a
-            href="https://github.com/dev-deepaman"
-            target="_blank"
-            rel="noreferrer"
-          >
-            github.com/dev-deepaman
-          </a>
-        </div>
+          return (
+            <div key={index} className="contact-item">
+              <div className="contact-icon">
+                <Icon />
+              </div>
 
-        <div className="contact-card">
-          <h3>LinkedIn</h3>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-            linkedin.com/in/amandeep-singh
-          </a>
-        </div>
+              <div>
+                <span>{item.title}</span>
+
+                <h4>{item.value}</h4>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
