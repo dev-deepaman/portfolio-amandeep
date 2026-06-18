@@ -4,13 +4,14 @@ export const menuItems = [
     link: "#home",
   },
   {
-    name: "About",
-    link: "#about",
+    name: "Services",
+    link: "#services",
   },
   {
     name: "Skills",
     link: "#skills",
   },
+
   {
     name: "Projects",
     link: "#projects",

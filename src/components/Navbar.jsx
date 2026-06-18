@@ -1,4 +1,4 @@
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo-light.png";
 import { menuItems } from "../data/menu";
 
 function Navbar() {

@@ -2,7 +2,7 @@ import { projects } from "../data/projects";
 
 function Recentwork() {
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="projects" className="portfolio">
       <div className="portfolio-header">
         <h2>My Recent Works</h2>
 
