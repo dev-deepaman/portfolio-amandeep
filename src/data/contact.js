@@ -10,7 +10,7 @@ export const contactInfo = [
   {
     icon: FaEnvelope,
     title: "Email",
-    value: "amandeep@email.com",
+    value: "amandeep1892@gmail.com",
   },
 
   {
