@@ -19,7 +19,24 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
-
+.dark-theme {
+  --section-bg: #0f0715;
+  --section-bg-colored: #050709;
+  --paragrph-color: #dddddd;
+  --stats-color: #dddddd;
+  --card-h3-color: #dddddd;
+  --skill-card-bg: #1a0f2b;
+  --form-input-bg: #050709;
+}
+.light-theme {
+  --section-bg: #ffffff;
+  --section-bg-colored: #f6f3fc;
+  --paragrph-color: #0b0a0a;
+  --stats-color: #8750f7;
+  --card-h3-color: #0b0a0a;
+  --skill-card-bg: #f4f1fb;
+  --form-input-bg: #f4f1fb;
+}
 /*Theme Switcher*/
 .theme-switcher {
   position: fixed;
@@ -67,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   padding: 5rem 10%;
-  background: #ffffff;
+  background: var(--section-bg);
 }
 
 .hero-content {
@@ -96,7 +113,7 @@ body {
 }
 
 .hero-text p {
-  color: #0b0a0a;
+  color: var(--paragrph-color);
   font-size: 18px;
   max-width: 600px;
   line-height: 1.8;
@@ -119,7 +136,7 @@ body {
 
 .download-btn {
   color: #8750f7;
-  background: white;
+  background: var(--section-bg);
   border: 1px solid #8750f7;
 }
 .download-btn:hover {
@@ -162,7 +179,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
-  background: #ffffff;
+  background: var(--section-bg-colored);
   backdrop-filter: blur(10px);
 }
 
@@ -178,16 +195,11 @@ body {
   list-style: none;
 }
 
-.nav-links {
-  display: flex;
-  gap: 80px;
-}
-
 .nav-links a {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: var(--paragrph-color);
   padding-bottom: 5px;
 }
 
@@ -236,8 +248,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  background: #ffffff;
-  color: #8750f7;
+  background: var(--section-bg);
+  color: var(--stats-color);
 }
 
 .stat-card {
@@ -246,18 +258,18 @@ body {
 
 .stat-card h2 {
   font-size: 55px;
-  color: #8750f7;
+  color: var(--stats-color);
 }
 
 .stat-card p {
-  color: #8750f7;
+  color: var(--stats-color);
   margin-top: 10px;
 }
 /* SERVICES */
 
 .services {
   padding: 120px 10%;
-  background: #f4f1fb;
+  background: var(--section-bg-colored);
 }
 
 .services-header {
@@ -269,15 +281,13 @@ body {
 .services-header h2 {
   font-size: 60px;
   margin-bottom: 20px;
-
   background: linear-gradient(90deg, #8750f7, #3f228d);
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .services-header p {
-  color: #444;
+  color: var(--paragrph-color);
   line-height: 1.8;
   font-size: 18px;
 }
@@ -314,11 +324,11 @@ body {
 
 .service-left h3 {
   font-size: 42px;
-  color: #8750f7;
+  color: var(--stats-color);
 }
 
 .service-center p {
-  color: #333;
+  color: var(--paragrph-color);
   font-size: 18px;
   line-height: 1.7;
 }
@@ -333,18 +343,13 @@ body {
 
 .service-item {
   position: relative;
-
   display: grid;
   grid-template-columns: 1.5fr 2fr 80px;
-
   align-items: center;
   padding: 35px 30px;
-
   border-bottom: 1px solid #ddd;
-
   cursor: pointer;
   overflow: hidden;
-
   transition:
     transform 0.4s ease,
     color 0.4s ease;
@@ -354,16 +359,12 @@ body {
 
 .service-item::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: -100%;
-
   width: 100%;
   height: 100%;
-
   background: linear-gradient(90deg, #8750f7, #2f125f);
-
   transition: left 0.5s ease;
   z-index: 0;
 }
@@ -422,35 +423,6 @@ body {
   transition: color 0.4s ease;
 }
 
-/*Recent Works */
-
-.recent-work {
-  padding: 120px 10%;
-  background: #ffffff;
-}
-.recent-work-header h2 {
-  text-align: center;
-  font-size: 60px;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #8750f7, #3f228d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.recent-work-header p {
-  color: #444;
-  line-height: 1.8;
-  font-size: 18px;
-  text-align: center;
-}
-.recent-work-list {
-  display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  gap: 30px;
-  margin-top: 50px;
-  color: #8750f7;
-  text-align: center;
-}
-
 /* Resume */
 
 .resume {
@@ -458,7 +430,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 80px;
-  background: #f4f1fb;
+  background: var(--section-bg-colored);
   text-align: center;
 }
 .resume-heading {
@@ -473,7 +445,7 @@ body {
 }
 
 .resume-card {
-  background: white;
+  background: var(--section-bg);
   padding: 35px;
   border-radius: 24px;
   transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
@@ -481,20 +453,18 @@ body {
 }
 .resume-card span {
   color: #8750f7;
-
   font-size: 26px;
-
   font-weight: 700;
 }
 .resume-card h3 {
   margin-top: 12px;
   font-size: 40px;
   font-weight: 700;
-  color: #120b26;
+  color: var(--card-h3-color);
 }
 .resume-card p {
   margin-top: 10px;
-  color: #555;
+  color: var(--paragrph-color);
   font-size: 22px;
 }
 .resume-card:hover {
@@ -512,6 +482,7 @@ body {
 /* Skills */
 .skills {
   padding: 120px 10%;
+  background: var(--section-bg);
 }
 
 .skills-header {
@@ -527,15 +498,13 @@ body {
 }
 
 .skills-header p {
-  color: #666;
+  color: var(--paragrph-color);
   line-height: 1.8;
 }
 
 .skills-grid {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
   gap: 30px;
 }
 
@@ -545,7 +514,7 @@ body {
 
 .skill-card {
   height: 190px;
-  background: #f4f1fb;
+  background: var(--skill-card-bg);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
@@ -594,6 +563,7 @@ body {
 
 .portfolio {
   padding: 120px 10%;
+  background: var(--section-bg);
 }
 
 .portfolio-header {
@@ -610,52 +580,38 @@ body {
 .portfolio-header p {
   max-width: 700px;
   margin: auto;
-  color: #666;
+  color: var(--paragrph-color);
 }
 
 .portfolio-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 40px;
 }
 .project-card {
   position: relative;
-
   overflow: hidden;
-
   border-radius: 24px;
-
   cursor: pointer;
 }
 .project-card img {
   width: 100%;
   height: 400px;
-
   object-fit: cover;
-
   display: block;
-
   transition: 0.5s ease;
 }
 .project-overlay {
   position: absolute;
-
   left: 20px;
   right: 20px;
   bottom: -150px;
-
   background: linear-gradient(90deg, #8750f7, #3a1c71);
-
   padding: 25px;
-
   border-radius: 20px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   transition: 0.4s ease;
 }
 .project-card:hover img {
@@ -668,6 +624,7 @@ body {
 .project-overlay h3 {
   color: white;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .project-overlay p {
@@ -689,57 +646,48 @@ body {
   padding: 120px 10%;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  background: #f4f1fb;
+  background: var(--section-bg-colored);
   gap: 80px;
 }
 
 .contact-form-wrapper {
-  background: white;
-
+  background: var(--section-bg);
   padding: 50px;
-
   border-radius: 30px;
 }
 
 .contact-form-wrapper h2 {
   font-size: 64px;
-
   color: #8750f7;
-
   margin-bottom: 20px;
 }
 
 .contact-form-wrapper p {
   color: #666;
-
   margin-bottom: 40px;
-
   line-height: 1.8;
 }
 .form-row {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 20px;
-
   margin-bottom: 20px;
+}
+.form-row input,
+select,
+textarea {
+  background: var(--form-input-bg);
+  color: var(--paragrph-color);
 }
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-
   padding: 18px 20px;
-
   border: 1px solid #ddd;
-
   border-radius: 12px;
-
   font-size: 16px;
-
   outline: none;
-
   transition: 0.3s ease;
 }
 .contact-form input:focus,
@@ -758,21 +706,13 @@ body {
 }
 .contact-form button {
   border: none;
-
   padding: 16px 40px;
-
   border-radius: 50px;
-
   color: white;
-
   font-size: 18px;
-
   font-weight: 600;
-
   cursor: pointer;
-
   background: linear-gradient(90deg, #8750f7, #3a1c71);
-
   transition: 0.3s ease;
 }
 .contact-form button:hover {
@@ -780,48 +720,35 @@ body {
 }
 .contact-info {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   gap: 50px;
 }
 .contact-item {
   display: flex;
-
   align-items: center;
-
   gap: 25px;
 }
 .contact-icon {
   width: 45px;
   height: 45px;
-
   border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
-
   font-size: 24px;
-
   background: linear-gradient(135deg, #8750f7, #3a1c71);
 }
 .contact-item span {
-  color: #666;
-
+  color: var(--paragrph-color);
   font-size: 14px;
 }
 
 .contact-item h4 {
   margin-top: 5px;
-
   font-size: 24px;
-
-  color: #120b26;
+  color: var(--paragrph-color);
 }
 
 @media (max-width: 992px) {
